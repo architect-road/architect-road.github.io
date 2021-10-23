@@ -31,45 +31,6 @@
                 href="/posts/"
                 />
   </url><url>
-    <loc>/tags/css/</loc>
-    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/css/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/tags/css/"
-                />
-  </url><url>
-    <loc>/tags/html/</loc>
-    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/html/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/tags/html/"
-                />
-  </url><url>
-    <loc>/series/manual/</loc>
-    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/series/manual/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/series/manual/"
-                />
-  </url><url>
     <loc>/tags/markdown/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -96,19 +57,6 @@
                 href="/posts/markdown-syntax/"
                 />
   </url><url>
-    <loc>/series/</loc>
-    <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/series/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/series/"
-                />
-  </url><url>
     <loc>/tags/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -120,6 +68,18 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="/tags/"
+                />
+  </url><url>
+    <loc>/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="/series/"
                 />
   </url><url>
     <loc>/categories/</loc>
