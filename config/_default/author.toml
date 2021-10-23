@@ -1,0 +1,9 @@
+name = "陈银鹏"
+# avatar = "images/profile.png" # Avatar image. Default to "images/profile.webp".
+bio = "A salted fish."
+company = "HUST"
+location = "Earth"
+# about = "https://domain.tld" # The external about page. The internal about page will be used if not set.
+
+[params]
+  #layout = "compact"
