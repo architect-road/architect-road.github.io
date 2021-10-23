@@ -19,8 +19,8 @@
 <meta name="twitter:title" content="Tags"/>
 <meta name="twitter:description" content="Un thème de blog extrêmement rapide, réactif et riche en fonctionnalités pour Hugo"/>
 <meta name="twitter:site" content="@yourtwitterusername"/>
-<link rel="alternate" type="application/rss+xml" href="/fr/tags/index.xml" title="Hugo Bootstrap" /><link rel="preload" href="/css/bundle.min.581ef638ef739076c45aebdd5d275eef6fe29213a860ce2ebbb76fc1c919de6a.css" integrity="sha256-WB72OO9zkHbEWuvdXSde72/ikhOoYM4uu7dvwckZ3mo=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/bundle.min.581ef638ef739076c45aebdd5d275eef6fe29213a860ce2ebbb76fc1c919de6a.css" integrity="sha256-WB72OO9zkHbEWuvdXSde72/ikhOoYM4uu7dvwckZ3mo=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.ddc7469856126228b2b3b53ff71a1fbfa67bdceb0c7d6e02322a08fbda7eeed7.js" integrity="sha256-3cdGmFYSYiiys7U/9xofv6Z73OsMfW4CMioI&#43;9p&#43;7tc=" crossorigin="anonymous"></script></head>
+<link rel="alternate" type="application/rss+xml" href="/fr/tags/index.xml" title="Hugo Bootstrap" /><link rel="preload" href="/css/bundle.min.246fba476dcf1c6ec7112889ca361d534ede50402e1cfa44c320ed085ccf2488.css" integrity="sha256-JG&#43;6R23PHG7HESiJyjYdU07eUEAuHPpEwyDtCFzPJIg=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/bundle.min.246fba476dcf1c6ec7112889ca361d534ede50402e1cfa44c320ed085ccf2488.css" integrity="sha256-JG&#43;6R23PHG7HESiJyjYdU07eUEAuHPpEwyDtCFzPJIg=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.15ecaa25968e33a8e188bdf66437955c7b704c04e99084cca6db914ece5b43a2.js" integrity="sha256-FeyqJZaOM6jhiL32ZDeVXHtwTATpkITMptuRTs5bQ6I=" crossorigin="anonymous" defer></script></head>
   <body><script src="/js/bootstrap.min.b5d86dd3a5f60c90be38a252bb65fc1a2732f32e71dc12c051720f0c7aef3cde.js" integrity="sha256-tdht06X2DJC&#43;OKJSu2X8Gicy8y5x3BLAUXIPDHrvPN4=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -31,12 +31,36 @@
    />
 BOOTSTRAP
     </a>
-    <button class="navbar-settings me-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
-  aria-controls="offcanvasSettings" aria-label="Toggle settings">
-  <i class="fas fa-sliders-h"></i>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
 </button>
 
-<div class="offcanvas offcanvas-end surface" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=Tags&url=%2ffr%2ftags%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=%2ffr%2ftags%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
   <div class="offcanvas-header">
     <h3 class="offcanvas-title">Réglages</h3>
     <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -122,27 +146,6 @@ BOOTSTRAP
         class="btn btn-sm palette" data-palette="yellow">
       </button></div>
 </section>
-<section class="setting social-share">
-  <form class="row">
-    <div class="col-auto">
-      <label><i class="fas fa-fw fa-share-alt"></i> Share</label>
-    </div>
-    <div class="col-auto ms-auto">
-      <a class="btn btn-sm btn-outline-primary btn-social-share"><i class="fas fa-share"></i></a>
-    </div>
-  </form>
-  <div class="mt-2 social-share-buttons d-flex visually-hidden flex-nowrap">
-    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=Tags&url=%2ffr%2ftags%2f">
-      <i class="fab fa-fw fa-twitter"></i> Twitter
-    </a>
-    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=%2ffr%2ftags%2f">
-      <i class="fab fa-fw fa-facebook-f"></i> Facebook
-    </a>
-  </div>
-</section>
-
 </div>
 </div>
 
@@ -259,7 +262,7 @@ BOOTSTRAP
         <h2 class="card-title">
           <a href="/fr/series">Séries</a>
         </h2>
-        <div><a href="/fr/series/user-manual/" class="post-taxonomy rounded btn btn-sm btn-outline-primary me-2 mb-2" title="User Manual">
+        <div><a href="/fr/series/user-manual/" class="badge bg-primary text-white rounded post-taxonomy" title="User Manual">
             User Manual
           </a></div>
       </div>
@@ -268,11 +271,11 @@ BOOTSTRAP
         <h2 class="card-title">
           <a href="/fr/tags">Tags</a>
         </h2>
-        <div><a href="/fr/tags/css/" class="post-taxonomy rounded btn btn-sm btn-outline-primary me-2 mb-2" title="CSS">
+        <div><a href="/fr/tags/css/" class="badge bg-primary text-white rounded post-taxonomy" title="CSS">
             CSS
-          </a><a href="/fr/tags/html/" class="post-taxonomy rounded btn btn-sm btn-outline-primary me-2 mb-2" title="HTML">
+          </a><a href="/fr/tags/html/" class="badge bg-primary text-white rounded post-taxonomy" title="HTML">
             HTML
-          </a><a href="/fr/tags/markdown/" class="post-taxonomy rounded btn btn-sm btn-outline-primary me-2 mb-2" title="Markdown">
+          </a><a href="/fr/tags/markdown/" class="badge bg-primary text-white rounded post-taxonomy" title="Markdown">
             Markdown
           </a></div>
       </div>
@@ -311,6 +314,8 @@ BOOTSTRAP
         <i class="fa-fw fa-2x fab fa-linkedin-in"></i>
       </a><a class="nav-link social-link" target="_blank" href="https://medium.com/@yourmediumusername" title="Medium" rel="noopener noreferrer">
         <i class="fab fa-fw fa-2x fa-medium-m"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://www.pinterest.com/yourpinterestusername" title="Pinterest" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-pinterest"></i>
       </a><a class="nav-link social-link" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=yourqqnumber&amp;site=qq&amp;menu=yes" title="QQ" rel="noopener noreferrer">
         <i class="fa-fw fa-2x fab fa-qq"></i>
       </a><a class="nav-link social-link" target="_blank" href="https://www.quora.com/profile/yourquorausername" title="Quora" rel="noopener noreferrer">
