@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright © 2021-{year} YinpengChen. All Rights Reserved.</copyright>
-    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Markdown</title>
-      <link>/tags/markdown/</link>
-      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      <title>pytorch</title>
+      <link>/tags/pytorch/</link>
+      <pubDate>Tue, 26 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>/tags/markdown/</guid>
+      <guid>/tags/pytorch/</guid>
       <description></description>
     </item>
     

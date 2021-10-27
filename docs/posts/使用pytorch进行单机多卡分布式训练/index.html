@@ -3,23 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>分类 - 学飞的猪</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <title>使用Pytorch进行单机多卡分布式训练 - 学飞的猪</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="/images/favicons/manifest.json">
 <link rel="icon" href="/images/favicons/favicon.ico">
-<meta name="keywords" content="Hugo, Bootstrap, 博客主题" />
-<meta name="description" content="一个极快、响应式和功能丰富的 Hugo 博客主题" /><meta itemprop="name" content="分类">
-<meta itemprop="description" content="一个极快、响应式和功能丰富的 Hugo 博客主题"><meta property="og:title" content="分类" />
-<meta property="og:description" content="一个极快、响应式和功能丰富的 Hugo 博客主题" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/categories/" /><meta property="og:site_name" content="学飞的猪" />
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="使用Pytorch进行单机多卡分布式训练">
+<meta itemprop="description" content="一. torch.nn.DataParallel ? pytorch单机多卡最简单的实现方法就是使用nn.DataParallel类，其几乎仅使用一行代码net = torch.nn.Dat"><meta itemprop="datePublished" content="2021-10-26T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-26T00:00:00+00:00" />
+<meta itemprop="wordCount" content="780">
+<meta itemprop="keywords" content="pytorch," /><meta property="og:title" content="使用Pytorch进行单机多卡分布式训练" />
+<meta property="og:description" content="一. torch.nn.DataParallel ? pytorch单机多卡最简单的实现方法就是使用nn.DataParallel类，其几乎仅使用一行代码net = torch.nn.Dat" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/%E4%BD%BF%E7%94%A8pytorch%E8%BF%9B%E8%A1%8C%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%8D%A1%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-26T00:00:00+00:00" /><meta property="og:site_name" content="学飞的猪" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="分类"/>
-<meta name="twitter:description" content="一个极快、响应式和功能丰富的 Hugo 博客主题"/>
+<meta name="twitter:title" content="使用Pytorch进行单机多卡分布式训练"/>
+<meta name="twitter:description" content="一. torch.nn.DataParallel ? pytorch单机多卡最简单的实现方法就是使用nn.DataParallel类，其几乎仅使用一行代码net = torch.nn.Dat"/>
 <meta name="twitter:site" content="@yourtwitterusername"/>
-<link rel="alternate" type="application/rss+xml" href="/categories/index.xml" title="学飞的猪" /><link rel="preload" href="/css/bundle.min.246fba476dcf1c6ec7112889ca361d534ede50402e1cfa44c320ed085ccf2488.css" integrity="sha256-JG&#43;6R23PHG7HESiJyjYdU07eUEAuHPpEwyDtCFzPJIg=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="/css/bundle.min.246fba476dcf1c6ec7112889ca361d534ede50402e1cfa44c320ed085ccf2488.css" integrity="sha256-JG&#43;6R23PHG7HESiJyjYdU07eUEAuHPpEwyDtCFzPJIg=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/css/bundle.min.246fba476dcf1c6ec7112889ca361d534ede50402e1cfa44c320ed085ccf2488.css" integrity="sha256-JG&#43;6R23PHG7HESiJyjYdU07eUEAuHPpEwyDtCFzPJIg=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.15ecaa25968e33a8e188bdf66437955c7b704c04e99084cca6db914ece5b43a2.js" integrity="sha256-FeyqJZaOM6jhiL32ZDeVXHtwTATpkITMptuRTs5bQ6I=" crossorigin="anonymous" defer></script></head>
   <body><script src="/js/bootstrap.min.b5d86dd3a5f60c90be38a252bb65fc1a2732f32e71dc12c051720f0c7aef3cde.js" integrity="sha256-tdht06X2DJC&#43;OKJSu2X8Gicy8y5x3BLAUXIPDHrvPN4=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
   <div class="container">
@@ -45,11 +50,11 @@ BOOTSTRAP
   </div>
   <div class="offcanvas-body">
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
-      target="_blank" href="https://twitter.com/intent/tweet?title=%e5%88%86%e7%b1%bb&url=%2fcategories%2f">
+      target="_blank" href="https://twitter.com/intent/tweet?title=%e4%bd%bf%e7%94%a8Pytorch%e8%bf%9b%e8%a1%8c%e5%8d%95%e6%9c%ba%e5%a4%9a%e5%8d%a1%e5%88%86%e5%b8%83%e5%bc%8f%e8%ae%ad%e7%bb%83&url=%2fposts%2f%25E4%25BD%25BF%25E7%2594%25A8pytorch%25E8%25BF%259B%25E8%25A1%258C%25E5%258D%2595%25E6%259C%25BA%25E5%25A4%259A%25E5%258D%25A1%25E5%2588%2586%25E5%25B8%2583%25E5%25BC%258F%25E8%25AE%25AD%25E7%25BB%2583%2f">
       <i class="fab fa-fw fa-twitter"></i> Twitter
     </a>
     <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
-      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=%2fcategories%2f">
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=%2fposts%2f%25E4%25BD%25BF%25E7%2594%25A8pytorch%25E8%25BF%259B%25E8%25A1%258C%25E5%258D%2595%25E6%259C%25BA%25E5%25A4%259A%25E5%258D%25A1%25E5%2588%2586%25E5%25B8%2583%25E5%25BC%258F%25E8%25AE%25AD%25E7%25BB%2583%2f">
       <i class="fab fa-fw fa-facebook-f"></i> Facebook
     </a>
   </div>
@@ -162,7 +167,7 @@ BOOTSTRAP
             <i class="fas fa-fw fa-file-archive"></i>归档
           </a>
         </li><li class="nav-item">
-          <a class="nav-link active" href="/categories/">
+          <a class="nav-link" href="/categories/">
             <i class="fas fa-fw fa-folder"></i>分类
           </a>
         </li><li class="nav-item">
@@ -198,22 +203,94 @@ BOOTSTRAP
 <div class="col-lg-8">
   <div class="container"><nav class="row card component" aria-label="breadcrumb">
   <div class="card-body">
-    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="/">主页</a></li><li class="breadcrumb-item active">分类</li></ol>
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="/">主页</a></li><li class="breadcrumb-item"><a href="/posts/">文章</a></li><li class="breadcrumb-item active">使用Pytorch进行单机多卡分布式训练</li></ol>
   </div>
-</nav><div class="taxonomys"><div class="taxonomy row card component">
-        <div class="card-body">
-          <h2 class="taxonomy-title card-title">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-          </h2>
-          <div class="taxonomy-meta">
-            <span class="taxonomy-post-count"><i class="fas fa-fw fa-file-alt"></i>总共 1 篇文章</span>
-          </div><ul class="taxonomy-posts"><li class="taxonomy-post">
-              <a class="post-title" href="/posts/%E4%BD%BF%E7%94%A8pytorch%E8%BF%9B%E8%A1%8C%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%8D%A1%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83/">使用Pytorch进行单机多卡分布式训练</a>
-              <span class="float-end post-date">10-26</span>
-            </li></ul>
-          <div class="taxonomy-actions"></div></div>
-      </div></div><div class="row table-responsive mb-3"></div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    <a class="action btn-reward" role="button" data-bs-toggle="modal" data-bs-target="#rewardModal" title="打赏">
+  <i class="fas fa-fw fa-coffee"></i>
+</a>
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0" type="button" aria-label="Copyright" 
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    
+    
+  </div>
 </div>
+<div class="card-body">
+        <h1 class="card-title my-3">使用Pytorch进行单机多卡分布式训练
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>2021-10-26
+  </span><span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>2 分钟阅读
+  </span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="badge rounded-pill text-white bg-primary post-taxonomy">技术</a><a href="/tags/pytorch/" class="badge rounded-pill text-white bg-primary post-taxonomy">pytorch</a></div>
+<div class="post-content mb-3"><h1 id="一-torchnndataparallel-">一. torch.nn.DataParallel ?</h1>
+<p>pytorch单机多卡最简单的实现方法就是使用nn.DataParallel类，其几乎仅使用一行代码<code>net = torch.nn.DataParallel(net)</code>就可让模型同时在多张GPU上训练，它大致的工作过程如下图所示：
+<img class="img-fluid" alt="DataParallel前传与反传工作过程" src="/posts/%E4%BD%BF%E7%94%A8pytorch%E8%BF%9B%E8%A1%8C%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%8D%A1%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83/images/DataParallel.png" loading="lazy"
+   width="2563" height="840"
+   />
+
+</p>
+<p>在<strong>每一个Iteration</strong>的<strong>Forward</strong>过程中，nn.DataParallel都<strong>自动</strong>将输入按照gpu_batch进行split，然后<strong>复制</strong>模型参数到各个GPU上，分别进行前传后将得到网络输出，最后将结果concat到一起送往0号卡中。</p>
+<p>在<strong>Backward</strong>过程中，先由<strong>0号卡</strong>计算loss函数，通过<code>loss.backward()</code>得到损失函数相于各个gpu输出结果的梯度grad_l1 &hellip; gradln，接下来0号卡将所有的grad_l送回对应的GPU中，然后GPU们分别进行backward得到各个GPU上面的模型参数梯度值gradm1 &hellip; gradmn，最后所有参数的梯度汇总到GPU0卡进行update。</p>
+<blockquote>
+<p>注：DataParallel的整个并行训练过程利用<strong>python多线程</strong>实现</p>
+</blockquote>
+<p>由以上工作过程分析可知，nn.DataParallel有着这样几个无法避免的问题：</p>
+<ol>
+<li>负载不均衡问题。gpu0所承担的任务明显要重于其他gpu</li>
+<li>速度问题。每个iteration都需要复制模型且均从GPU0卡向其他GPU复制，通讯任务重且效率低；python多线程GIL锁导致的线程颠簸(thrashing)问题。</li>
+<li>只能单机运行。由于单进程的约束导致。</li>
+<li>只能切分batch到多GPU，而无法让一个model分布在多个GPU上。当一个模型过大，设置batchsize=1时其显存占用仍然大于单张显卡显存，此时就无法使用DataParallel类进行训练。</li>
+</ol>
+<p>因此官方推荐使用torch.nn.DistributedDataParallel替代nn.DataParallel.</p>
+<h1 id="二-torchnnparalleldistributeddataparallel-">二. torch.nn.Parallel.DistributedDataParallel !</h1>
+</div><div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-coffee"></i>打赏</h5>
+        <a href="#" data-bs-dismiss="modal" class="btn btn-sm btn-outline-primary" aria-label="Close"><i class="fas fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs flex-nowrap mb-3" role="tablist"><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link active" id="reward-alipay-tab" data-bs-toggle="tab" href="#reward-alipay" role="tab" aria-controls="reward-alipay" aria-selected="true">
+              <i class="fab fa-fw fa-alipay"></i>支付宝
+            </a>
+          </li><li class="nav-item text-nowrap" role="presentation">
+            <a class="nav-link" id="reward-wechat-tab" data-bs-toggle="tab" href="#reward-wechat" role="tab" aria-controls="reward-wechat" aria-selected="true">
+              <i class="fab fa-fw fa-weixin"></i>微信
+            </a>
+          </li></ul>
+        <div class="tab-content" id="rewardTabContent"><div class="tab-pane fade post-reward-content show active" id="reward-alipay" role="tabpanel" aria-labelledby="reward-alipay-tab">
+            <img class="img-fluid post-reward-img" src="/images/reward/alipay.png" loading="lazy" />
+          </div><div class="tab-pane fade post-reward-content show" id="reward-wechat" role="tabpanel" aria-labelledby="reward-wechat-tab">
+            <img class="img-fluid post-reward-img" src="/images/reward/wechat.png" loading="lazy" />
+          </div></div>
+      </div>
+    </div>
+  </div>
+</div><hr /></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"><script src="https://utteranc.es/client.js"
+  repo="architect-road/architect-road.github.io-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div>
+</div></div>
 </div><aside class="col-lg-4 sidebar d-flex">
   <div class="container">
     
@@ -315,9 +392,7 @@ BOOTSTRAP
         <i class="fa-fw fa-2x fab fa-youtube"></i>
       </a><a class="nav-link social-link" target="_blank" href="https://www.zhihu.com/people/yourzhihuusername" title="Zhihu" rel="noopener noreferrer">
         <i class="fa-fw fa-2x fab fa-zhihu"></i>
-      </a><a class="nav-link social-link" target="_blank" href="/categories/index.xml" title="RSS" rel="noopener noreferrer">
-      <i class="fas fa-fw fa-2x fa-rss"></i>
-    </a></nav>
+      </a></nav>
 <div class="copyright mb-2">
   Copyright © 2021-2021 YinpengChen. All Rights Reserved.
 </div>

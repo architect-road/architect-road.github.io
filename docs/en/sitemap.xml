@@ -93,29 +93,9 @@
   </url><url>
     <loc>/en/tags/markdown/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/tags/markdown/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/tags/markdown/"
-                />
   </url><url>
     <loc>/en/posts/markdown-syntax/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="/posts/markdown-syntax/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/posts/markdown-syntax/"
-                />
   </url><url>
     <loc>/en/tags/alert/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
